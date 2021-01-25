@@ -206,9 +206,8 @@ class Transfer(object):
                 raise ValueError(
                     "Must give non-empty remote path when local is a file-like object!"  # noqa
                 )
-            else:
-                remote = local_base
-                debug("Massaged empty remote path into {!r}".format(remote))
+            remote = local_base
+            debug("Massaged empty remote path into {!r}".format(remote))
         elif self.is_remote_dir(remote):
             # non-empty local_base implies a) text file path or b) FLO which
             # had a non-empty .name attribute. huzzah!
